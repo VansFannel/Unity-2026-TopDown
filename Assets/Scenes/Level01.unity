@@ -227,8 +227,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d06ad44b13866c42b6e9aa98236366d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerCharacter
-  linearSpeed: 4
+  linearSpeed: 1
   move: {fileID: 1184361015}
+  punch: {fileID: 1927177145}
+  punchRadius: 0.3
+  punchRange: 0.3
 --- !u!50 &88124723
 Rigidbody2D:
   serializedVersion: 5
@@ -290,8 +293,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.32, y: 0.6}
+  m_Offset: {x: 0, y: -0.14000002}
+  m_Size: {x: 0.32, y: 0.32}
   m_Direction: 0
 --- !u!95 &88124725
 Animator:
@@ -550,6 +553,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
   m_Asset: {fileID: -944628639613478452, guid: 45818f28dbdd5cf4b963651de11e5f58, type: 3}
   m_ActionId: 351f2ccd-1f9f-44bf-9bec-d62ac5c5f408
+--- !u!114 &1927177145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc1515ab76e54f068e2f2207940fab32, type: 3}
+  m_Name: Player/Attack
+  m_EditorClassIdentifier: Unity.InputSystem::UnityEngine.InputSystem.InputActionReference
+  m_Asset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_ActionId: 6c2ab1b8-8984-453a-af3d-a3c78ae1679a
 --- !u!1 &2090961873
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +581,7 @@ GameObject:
   - component: {fileID: 2090961878}
   - component: {fileID: 2090961877}
   - component: {fileID: 2090961879}
+  - component: {fileID: 2090961880}
   m_Layer: 0
   m_Name: Skeleton
   m_TagString: Untagged
@@ -720,8 +738,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.34, y: 0.66}
+  m_Offset: {x: 0, y: -0.16000001}
+  m_Size: {x: 0.34, y: 0.34}
   m_Direction: 0
 --- !u!114 &2090961879
 MonoBehaviour:
@@ -735,7 +753,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac8fc2b9e453124da40ddc4baf43a91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseSkeleton
-  linearSpeed: 0
+  linearSpeed: 0.5
+--- !u!95 &2090961880
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090961873}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 32177e1644de7674bb4ac277c5bc8b45, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

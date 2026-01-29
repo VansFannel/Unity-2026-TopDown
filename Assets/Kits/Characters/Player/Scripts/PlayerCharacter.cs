@@ -5,15 +5,19 @@ using UnityEngine.InputSystem;
 public class PlayerCharacter : CharacterBase
 {
     [SerializeField] InputActionReference move;
-    Animator animator;
+    [SerializeField] InputActionReference punch;
 
     private Vector2 rawMove;
+    private bool mustPunch;
+    private Vector2 punchDirection = Vector2.down;
+
+    [Header("Punch data")]
+    [SerializeField] float punchRadius = 0.3f;
+    [SerializeField] float punchRange = 0.3f;
 
     protected override void Awake()
     {
         base.Awake();
-
-        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -22,6 +26,9 @@ public class PlayerCharacter : CharacterBase
         move.action.started += OnMove;
         move.action.performed += OnMove;
         move.action.canceled += OnMove;
+
+        punch.action.Enable();
+        punch.action.performed += OnPunch;
     }
 
     protected override void Update()
@@ -30,6 +37,32 @@ public class PlayerCharacter : CharacterBase
 
         Move(rawMove);
 
+        if (mustPunch)
+        {
+            mustPunch = false;
+            PerformPunch();
+        }
+    }
+
+    void PerformPunch()
+    {
+        RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, punchRadius, punchDirection * punchRange);
+
+        foreach (RaycastHit2D hit in hits)
+        {
+            CharacterBase otherBaseCharacter = hit.collider.GetComponent<CharacterBase>();
+
+            if (otherBaseCharacter != this)
+            {
+                otherBaseCharacter?.NotifyPunch();
+            }
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, punchDirection * punchRange);
     }
 
     private void OnDisable()
@@ -38,10 +71,23 @@ public class PlayerCharacter : CharacterBase
         move.action.started -= OnMove;
         move.action.performed -= OnMove;
         move.action.canceled -= OnMove;
+
+        punch.action.Disable();
+        punch.action.performed -= OnPunch;
     }
 
     private void OnMove(InputAction.CallbackContext context)
     {
         rawMove = context.action.ReadValue<Vector2>();
+
+        if (rawMove.magnitude > .0f)
+        {
+            punchDirection = rawMove.normalized;
+        }
+    }
+
+    private void OnPunch(InputAction.CallbackContext context)
+    {
+        mustPunch = true;
     }
 }
