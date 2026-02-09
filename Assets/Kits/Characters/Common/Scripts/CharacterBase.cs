@@ -2,9 +2,12 @@ using System;
 using UnityEngine;
 using static UnityEditor.PlayerSettings.SplashScreen;
 
-public class CharacterBase : MonoBehaviour
+public class CharacterBase : MonoBehaviour, IVisible2D
 {
     [SerializeField] float linearSpeed = 0.0f;
+
+    [SerializeField] int priority = 0;
+    [SerializeField] IVisible2D.Side side;
 
     Rigidbody2D rb2D;
 
@@ -34,5 +37,15 @@ public class CharacterBase : MonoBehaviour
     internal void NotifyPunch()
     {
         Destroy(gameObject);
+    }
+
+    int IVisible2D.GetPriority()
+    {
+        return priority;
+    }
+
+    IVisible2D.Side IVisible2D.GetSide()
+    {
+        return side;    
     }
 }

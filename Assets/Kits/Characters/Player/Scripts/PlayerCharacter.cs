@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Assertions.Must;
 using UnityEngine.InputSystem;
 
 public class PlayerCharacter : CharacterBase
@@ -15,9 +16,13 @@ public class PlayerCharacter : CharacterBase
     [SerializeField] float punchRadius = 0.3f;
     [SerializeField] float punchRange = 0.3f;
 
+    Life life;
+
     protected override void Awake()
     {
         base.Awake();
+
+        life = GetComponent<Life>();
     }
 
     private void OnEnable()
@@ -41,6 +46,16 @@ public class PlayerCharacter : CharacterBase
         {
             mustPunch = false;
             PerformPunch();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Drop drop = other.GetComponent<Drop>();
+        if (drop != null)
+        {
+            life.RecoverHealth(drop.dropDefinition.healthRecovery);
+            drop.NotifyPickedUp();
         }
     }
 
