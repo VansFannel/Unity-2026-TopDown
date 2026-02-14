@@ -57,7 +57,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -109,9 +109,9 @@ TextureImporter:
       name: sprZinkWeaponsAndShieldWandAttackS_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 13
         y: 16
-        width: 16
+        width: 19
         height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -131,10 +131,10 @@ TextureImporter:
       name: sprZinkWeaponsAndShieldWandAttackS_1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 16
+        x: 64
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,10 +153,10 @@ TextureImporter:
       name: sprZinkWeaponsAndShieldWandAttackS_2
       rect:
         serializedVersion: 2
-        x: 64
-        y: 16
+        x: 112
+        y: 0
         width: 16
-        height: 16
+        height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,72 +167,6 @@ TextureImporter:
       bones: []
       spriteID: 79cc0ce77396de9a0800000000000000
       internalID: -6202185424748622697
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprZinkWeaponsAndShieldWandAttackS_3
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 16
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cdc2e0f03f966be4dade2618a80c5019
-      internalID: -284037140
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprZinkWeaponsAndShieldWandAttackS_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 517a806577e463f49ba2caf9ec03fe9b
-      internalID: -487258523
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sprZinkWeaponsAndShieldWandAttackS_5
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 0
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e2495c5af2145764babbe083c0850c7f
-      internalID: 623918010
       vertices: []
       indices: 
       edges: []
@@ -251,14 +185,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       sprZinkWeaponsAndShieldWandAttackS_0: 3395680711506221906
       sprZinkWeaponsAndShieldWandAttackS_1: 8130047145468036034
       sprZinkWeaponsAndShieldWandAttackS_2: -6202185424748622697
-      sprZinkWeaponsAndShieldWandAttackS_3: -284037140
-      sprZinkWeaponsAndShieldWandAttackS_4: -487258523
-      sprZinkWeaponsAndShieldWandAttackS_5: 623918010
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
