@@ -57,6 +57,14 @@ public class PlayerCharacter : CharacterBase
             life.RecoverHealth(drop.dropDefinition.healthRecovery);
             drop.NotifyPickedUp();
         }
+        else
+        {
+            FollowingShoot shoot = other.GetComponent<FollowingShoot>();
+            if (shoot != null)
+            {
+                life.OnHitReceived(shoot.GetDamage());
+            }
+        }
     }
 
     void PerformPunch()

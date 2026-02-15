@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BaseSkeleton : CharacterBase
 {
-    Sight2D sight;
+    protected Sight2D sight;
 
     protected override void Awake()
     {
