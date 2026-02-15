@@ -4,11 +4,13 @@ using TMPro;
 
 public class InventoryItemUI : MonoBehaviour
 {
-    [SerializeField] InventoryItemDefinition inventoryItemDefinition;
+    [SerializeField] public InventoryItemDefinition inventoryItemDefinition;
 
     Image image;
     TextMeshProUGUI text;
     Button[] buttons;
+
+    InventoryUI inventoryUI;
 
     enum ButtonAction
     {
@@ -23,6 +25,8 @@ public class InventoryItemUI : MonoBehaviour
         buttons = GetComponentsInChildren<Button>();
         image = GetComponentInChildren<Image>();
         text = GetComponentInChildren<TextMeshProUGUI>();
+
+        inventoryUI = GetComponentInParent<InventoryUI>();
     }
 
     private void OnEnable()
@@ -48,8 +52,10 @@ public class InventoryItemUI : MonoBehaviour
 
     public void Init(InventoryItemDefinition definition)
     {
-        text.text = definition.itemName;
-        image.sprite = definition.sprite;
+        inventoryItemDefinition = Instantiate(definition);
+
+        text.text = inventoryItemDefinition.uniqueItemName;
+        image.sprite = inventoryItemDefinition.sprite;
     }
 
     void OnDiscard()
@@ -59,7 +65,12 @@ public class InventoryItemUI : MonoBehaviour
 
     void OnUse()
     {
-        Debug.Log("OnUse", this);
+        inventoryUI.NotifyInventoryItemUsed(inventoryItemDefinition);
+        inventoryItemDefinition.numUses--;
+        if (inventoryItemDefinition.numUses <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 

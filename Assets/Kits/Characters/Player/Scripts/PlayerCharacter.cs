@@ -113,4 +113,9 @@ public class PlayerCharacter : CharacterBase
     {
         mustPunch = true;
     }
+
+    internal void NotifyInventoryItemUsed(InventoryItemDefinition inventoryItemDefinition)
+    {
+        life.RecoverHealth(inventoryItemDefinition.healthRecovery);
+    }
 }
