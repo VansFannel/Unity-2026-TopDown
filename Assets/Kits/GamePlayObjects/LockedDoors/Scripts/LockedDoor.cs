@@ -1,8 +1,10 @@
+using TMPro;
 using UnityEngine;
 
 public class LockedDoor : MonoBehaviour
 {
     [SerializeField] InventoryItemDefinition keyDefinition;
+    [SerializeField] TextMeshProUGUI text;
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -11,9 +13,15 @@ public class LockedDoor : MonoBehaviour
             if (InventoryUI.instance.Contains(keyDefinition))
             {
                 InventoryUI.instance.Consume(keyDefinition);
-                
+
+                text.SetText("Opening Door");
+
                 Destroy(gameObject);
             }
+        }
+        else
+        {
+            text.SetText("Need a key");
         }
     }
 }
