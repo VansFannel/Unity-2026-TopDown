@@ -640,10 +640,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 568607454}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0000023841858, y: 0.000010482967}
-  m_SizeDelta: {x: 0.0000047684, y: 0}
+  m_AnchorMin: {x: 0.057499774, y: 0.33749986}
+  m_AnchorMax: {x: 0.96433324, y: 0.700574}
+  m_AnchoredPosition: {x: 0, y: -0.0014395239}
+  m_SizeDelta: {x: 0.000000029802, y: 0.00175}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &117102121
 MonoBehaviour:
@@ -665,8 +665,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e167f4744c99ea9439d746ca6ff401bd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -6441,7 +6441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e167f4744c99ea9439d746ca6ff401bd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7098,7 +7098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: e167f4744c99ea9439d746ca6ff401bd, type: 3}
   m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7848,7 +7848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LifeBar
   life: {fileID: 2090961881}
-  imageFill: {fileID: 568607451}
+  imageFill: {fileID: 758895570}
 --- !u!114 &1019582088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8147,8 +8147,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: e167f4744c99ea9439d746ca6ff401bd, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
@@ -8779,7 +8779,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2090961874
 SpriteRenderer:
   serializedVersion: 2
