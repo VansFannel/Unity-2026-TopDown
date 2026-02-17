@@ -8506,6 +8506,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LockedDoor
   keyDefinition: {fileID: 11400000, guid: 772479b8cf982e24a8aed240934aa76e, type: 2}
+  text: {fileID: 0}
 --- !u!1 &1868515327
 GameObject:
   m_ObjectHideFlags: 0
