@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class InventoryUI : MonoBehaviour
@@ -50,4 +51,6 @@ public class InventoryUI : MonoBehaviour
             Destroy(item.gameObject);
         }
     }
+
+
 }
