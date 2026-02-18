@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class Life : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class Life : MonoBehaviour
             if (currentLife <= .0f)
             {
                 onDeath.Invoke();
+                SceneManager.LoadScene("GameOverMenu");
             }
         }
     }
