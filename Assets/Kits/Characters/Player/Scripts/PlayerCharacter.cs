@@ -15,6 +15,9 @@ public class PlayerCharacter : CharacterBase
     [SerializeField] float punchRadius = 0.3f;
     [SerializeField] float punchRange = 0.3f;
 
+    public AudioClip punchSound;
+    public AudioClip punchSound2;
+
     Life life;
 
     protected override void Awake()
@@ -55,6 +58,11 @@ public class PlayerCharacter : CharacterBase
         {
             life.RecoverHealth(drop.dropDefinition.healthRecovery);
             drop.NotifyPickedUp();
+        }
+        else if (other.CompareTag("Enemy"))
+        {
+            AudioSource.PlayClipAtPoint(punchSound, transform.position);
+            life.OnHitReceived(0.1f);
         }
         else
         {
@@ -110,6 +118,7 @@ public class PlayerCharacter : CharacterBase
 
     private void OnPunch(InputAction.CallbackContext context)
     {
+        AudioSource.PlayClipAtPoint(punchSound2, transform.position);
         mustPunch = true;
     }
 
