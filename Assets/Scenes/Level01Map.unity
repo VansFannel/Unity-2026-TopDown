@@ -128698,6 +128698,8 @@ MonoBehaviour:
   linearSpeed: 1
   priority: 10
   side: 0
+  heartPrefab: {fileID: 7424355381935017495, guid: 4bfacb75d2fc84641bc3069915acad6c,
+    type: 3}
   move: {fileID: -1680190386980627800, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   punch: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   punchRadius: 0.3

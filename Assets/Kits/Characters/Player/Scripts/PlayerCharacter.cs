@@ -6,6 +6,7 @@ public class PlayerCharacter : CharacterBase
 {
     [SerializeField] InputActionReference move;
     [SerializeField] InputActionReference punch;
+    [SerializeField] GameObject heartPrefab;
 
     private Vector2 rawMove;
     private bool mustPunch;
@@ -85,6 +86,10 @@ public class PlayerCharacter : CharacterBase
             if (otherBaseCharacter != this)
             {
                 otherBaseCharacter?.NotifyPunch();
+                if (heartPrefab != null)
+                {
+                    Instantiate(heartPrefab, transform.position, Quaternion.identity);
+                }
             }
         }
     }
