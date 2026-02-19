@@ -39,6 +39,15 @@ public class CharacterBase : MonoBehaviour, IVisible2D
         Destroy(gameObject);
     }
 
+    internal void NotifyPunchLife(GameObject heartPrefab)
+    {
+        if (heartPrefab != null)
+        {
+            Instantiate(heartPrefab, transform.position, Quaternion.identity);
+        }
+        Destroy(gameObject);
+    }
+
     int IVisible2D.GetPriority()
     {
         return priority;

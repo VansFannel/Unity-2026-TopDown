@@ -88,11 +88,7 @@ public class PlayerCharacter : CharacterBase
 
             if (otherBaseCharacter != this)
             {
-                otherBaseCharacter?.NotifyPunch();
-                if (heartPrefab != null)
-                {
-                    Instantiate(heartPrefab, transform.position, Quaternion.identity);
-                }
+                otherBaseCharacter?.NotifyPunchLife(heartPrefab);
 
                 punchSprite.enabled = true;
 
