@@ -56,6 +56,8 @@ public class InventoryItemUI : MonoBehaviour
 
         text.text = inventoryItemDefinition.uniqueItemName;
         image.sprite = inventoryItemDefinition.sprite;
+
+        Debug.Log(inventoryItemDefinition.name);
     }
 
     void OnDiscard()

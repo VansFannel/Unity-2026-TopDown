@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PickableIventoryItem : MonoBehaviour
+public class PickableInventoryItem : MonoBehaviour
 {
     [SerializeField] InventoryItemDefinition itemDefinition;
 

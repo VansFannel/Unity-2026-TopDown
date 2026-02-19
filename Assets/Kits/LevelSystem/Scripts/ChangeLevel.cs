@@ -8,6 +8,7 @@ public class ChangeLevel : MonoBehaviour
     [SerializeField] GameObject player;
     [SerializeField] GameObject gameCamera;
     [SerializeField] GameObject cinemachineCamera;
+    [SerializeField] GameObject toggleInventory;
 
     [SerializeField] int sceneToLoad = 2;
 
@@ -20,6 +21,7 @@ public class ChangeLevel : MonoBehaviour
             DontDestroyOnLoad(player);
             DontDestroyOnLoad(gameCamera);
             DontDestroyOnLoad(cinemachineCamera);
+            DontDestroyOnLoad(toggleInventory);
 
             SceneManager.LoadScene(sceneToLoad);
         }

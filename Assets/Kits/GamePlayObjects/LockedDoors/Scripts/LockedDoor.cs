@@ -16,7 +16,7 @@ public class LockedDoor : MonoBehaviour
 
                 text.SetText("Opening Door");
 
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
         else

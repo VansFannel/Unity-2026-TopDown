@@ -1,10 +1,13 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class ToggleInventoryVisibility : MonoBehaviour
 {
     [SerializeField] InputActionReference inventoryAction;
-    [SerializeField] GameObject inventory;
+
+    [SerializeField] Canvas inventoryPanel;
+    [SerializeField] GameObject items;
 
     private void OnEnable()
     {
@@ -20,6 +23,7 @@ public class ToggleInventoryVisibility : MonoBehaviour
 
     private void OnInventoryAction(InputAction.CallbackContext context)
     {
-        inventory.SetActive(!inventory.activeInHierarchy);
+        inventoryPanel.enabled = !inventoryPanel.enabled;
+        //items.SetActive(!items.activeInHierarchy);
     }
 }
