@@ -35,7 +35,7 @@ public class Life : MonoBehaviour
             currentLife -= damage;
             onLifeChange.Invoke(currentLife);
 
-            if (currentLife <= .0f)
+            if (currentLife <= .0f && this.gameObject.CompareTag("Player"))
             {
                 onDeath.Invoke();
                 SceneManager.LoadScene("GameOverMenu");
@@ -52,4 +52,6 @@ public class Life : MonoBehaviour
             onLifeChange.Invoke(currentLife);
         }
     }
+
+    public float GetLife() {  return currentLife; }
 }

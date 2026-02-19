@@ -23,7 +23,6 @@ public class CharacterBase : MonoBehaviour, IVisible2D
 
     protected virtual void Update()
     {
-
         animator.SetFloat("HorizontalVelocity", lastMoveDirection.x);
         animator.SetFloat("VerticalVelocity", lastMoveDirection.y);
     }
@@ -36,15 +35,6 @@ public class CharacterBase : MonoBehaviour, IVisible2D
 
     internal void NotifyPunch()
     {
-        Destroy(gameObject);
-    }
-
-    internal void NotifyPunchLife(GameObject heartPrefab)
-    {
-        if (heartPrefab != null)
-        {
-            Instantiate(heartPrefab, transform.position, Quaternion.identity);
-        }
         Destroy(gameObject);
     }
 

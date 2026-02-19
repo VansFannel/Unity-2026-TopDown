@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BaseSkeleton
   linearSpeed: 0.5
   priority: 0
-  side: 1
+  side: 0
 --- !u!95 &7854910803253642969
 Animator:
   serializedVersion: 7

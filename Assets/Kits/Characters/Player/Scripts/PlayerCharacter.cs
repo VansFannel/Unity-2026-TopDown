@@ -22,7 +22,6 @@ public class PlayerCharacter : CharacterBase
 
     Life life;
 
-    [SerializeField] GameObject punchObject;
     [SerializeField] SpriteRenderer punchSprite;
 
     protected override void Awake()
@@ -87,13 +86,12 @@ public class PlayerCharacter : CharacterBase
         {
             foreach (RaycastHit2D hit in hits)
             {
-                CharacterBase otherBaseCharacter = hit.collider.GetComponent<CharacterBase>();
+                BaseSkeleton otherBaseCharacter = hit.collider.GetComponent<BaseSkeleton>();
 
                 if (otherBaseCharacter != this)
                 {
                     otherBaseCharacter?.NotifyPunchLife(heartPrefab);
 
-                    punchObject.transform.position = otherBaseCharacter.transform.position;
                     punchSprite.enabled = true;
 
                     StartCoroutine(HidePunchSprite());
