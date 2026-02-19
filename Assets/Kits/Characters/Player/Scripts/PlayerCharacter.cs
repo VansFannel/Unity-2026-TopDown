@@ -63,11 +63,6 @@ public class PlayerCharacter : CharacterBase
             life.RecoverHealth(drop.dropDefinition.healthRecovery);
             drop.NotifyPickedUp();
         }
-        else if (other.CompareTag("Enemy"))
-        {
-            AudioSource.PlayClipAtPoint(punchSound, transform.position);
-            life.OnHitReceived(0.1f);
-        }
         else
         {
             FollowingShoot shoot = other.GetComponent<FollowingShoot>();
@@ -75,6 +70,15 @@ public class PlayerCharacter : CharacterBase
             {
                 life.OnHitReceived(shoot.GetDamage());
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemy"))
+        {
+            AudioSource.PlayClipAtPoint(punchSound, transform.position);
+            life.OnHitReceived(0.1f);
         }
     }
 
