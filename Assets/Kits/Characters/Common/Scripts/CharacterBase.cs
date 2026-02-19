@@ -11,7 +11,7 @@ public class CharacterBase : MonoBehaviour, IVisible2D
 
     Rigidbody2D rb2D;
 
-    Animator animator;
+    protected Animator animator;
     Vector2 lastMoveDirection;
 
     protected virtual void Awake()

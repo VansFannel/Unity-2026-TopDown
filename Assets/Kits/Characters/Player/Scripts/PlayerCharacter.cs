@@ -80,6 +80,11 @@ public class PlayerCharacter : CharacterBase
             AudioSource.PlayClipAtPoint(punchSound, transform.position);
             life.OnHitReceived(0.1f);
         }
+        if (collision.collider.CompareTag("Vampire") && collision.collider.GetComponent<BaseSkeleton>().GetAttacking())
+        {
+            AudioSource.PlayClipAtPoint(punchSound, transform.position);
+            life.OnHitReceived(0.2f);
+        }
     }
 
     void PerformPunch()

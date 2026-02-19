@@ -21,7 +21,6 @@ public class Sight2D : MonoBehaviour
         {
             lastCheckTime = Time.time;
 
-            //Debug.Log("Checking sight");
             colliders = Physics2D.OverlapCircleAll(transform.position, radius);
 
             closestTarget = null;
