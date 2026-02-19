@@ -13,8 +13,8 @@ public class PlayerCharacter : CharacterBase
     private Vector2 punchDirection = Vector2.down;
 
     [Header("Punch data")]
-    [SerializeField] float punchRadius = 0.3f;
-    [SerializeField] float punchRange = 0.3f;
+    [SerializeField] float punchRadius = 0.01f;
+    [SerializeField] float punchRange = 0.01f;
 
     public AudioClip punchSound;
     public AudioClip punchSound2;
