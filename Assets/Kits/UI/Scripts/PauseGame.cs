@@ -5,13 +5,11 @@ using System.Collections.Generic;
 public class PauseGame : MonoBehaviour
 {
     public GameObject menu;
-    private bool isPaused = false;
 
     public void Pause()
     {
         menu.SetActive(true);
         Time.timeScale = 0f;
-        isPaused = true;
     }
 
     public void QuitGame()
@@ -29,6 +27,5 @@ public class PauseGame : MonoBehaviour
     {
         menu.SetActive(false);
         Time.timeScale = 1f;
-        isPaused = false;
     }
 }
