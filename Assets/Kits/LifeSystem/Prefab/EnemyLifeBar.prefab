@@ -81,7 +81,7 @@ PrefabInstance:
     - target: {fileID: 1689803606455696772, guid: ac42f48144a5f45499c9fea7181b89f8,
         type: 3}
       propertyPath: m_Name
-      value: EnemyLifeBar - Variant
+      value: EnemyLifeBar
       objectReference: {fileID: 0}
     - target: {fileID: 2549012765183044456, guid: ac42f48144a5f45499c9fea7181b89f8,
         type: 3}
@@ -261,12 +261,12 @@ PrefabInstance:
     - target: {fileID: 4488822404494892811, guid: ac42f48144a5f45499c9fea7181b89f8,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0.2609863
+      value: -0.039
       objectReference: {fileID: 0}
     - target: {fileID: 4488822404494892811, guid: ac42f48144a5f45499c9fea7181b89f8,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.4309082
+      value: 0.558
       objectReference: {fileID: 0}
     - target: {fileID: 4488822404494892811, guid: ac42f48144a5f45499c9fea7181b89f8,
         type: 3}
@@ -289,7 +289,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 309511103411724254, guid: ac42f48144a5f45499c9fea7181b89f8, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ac42f48144a5f45499c9fea7181b89f8, type: 3}
