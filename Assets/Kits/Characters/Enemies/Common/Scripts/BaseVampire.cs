@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class BaseVampire : CharacterBase
 {
-    protected Sight2DVampire sight;
+    protected Sight2D sight;
 
     Life life;
 
@@ -11,7 +11,7 @@ public class BaseVampire : CharacterBase
     {
         base.Awake();
 
-        sight = GetComponent<Sight2DVampire>();
+        sight = GetComponent<Sight2D>();
         life = GetComponent<Life>();
     }
 
