@@ -22,6 +22,7 @@ public class PlayerCharacter : CharacterBase
 
     Life life;
 
+    [SerializeField] GameObject punchObject;
     [SerializeField] SpriteRenderer punchSprite;
 
     protected override void Awake()
@@ -63,6 +64,11 @@ public class PlayerCharacter : CharacterBase
             life.RecoverHealth(drop.dropDefinition.healthRecovery);
             drop.NotifyPickedUp();
         }
+        else if (other.CompareTag("Enemy"))
+        {
+            AudioSource.PlayClipAtPoint(punchSound, transform.position);
+            life.OnHitReceived(0.1f);
+        }
         else
         {
             FollowingShoot shoot = other.GetComponent<FollowingShoot>();
@@ -73,30 +79,25 @@ public class PlayerCharacter : CharacterBase
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Enemy"))
-        {
-            AudioSource.PlayClipAtPoint(punchSound, transform.position);
-            life.OnHitReceived(0.1f);
-        }
-    }
-
     void PerformPunch()
     {
         RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, punchRadius, punchDirection * punchRange);
 
-        foreach (RaycastHit2D hit in hits)
+        if (hits.Length > 0)
         {
-            CharacterBase otherBaseCharacter = hit.collider.GetComponent<CharacterBase>();
-
-            if (otherBaseCharacter != this)
+            foreach (RaycastHit2D hit in hits)
             {
-                otherBaseCharacter?.NotifyPunchLife(heartPrefab);
+                CharacterBase otherBaseCharacter = hit.collider.GetComponent<CharacterBase>();
 
-                punchSprite.enabled = true;
+                if (otherBaseCharacter != this)
+                {
+                    otherBaseCharacter?.NotifyPunchLife(heartPrefab);
 
-                StartCoroutine(HidePunchSprite());
+                    punchObject.transform.position = otherBaseCharacter.transform.position;
+                    punchSprite.enabled = true;
+
+                    StartCoroutine(HidePunchSprite());
+                }
             }
         }
     }
