@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,8 @@ public class PlayerCharacter : CharacterBase
     public AudioClip punchSound2;
 
     Life life;
+
+    [SerializeField] SpriteRenderer punchSprite;
 
     protected override void Awake()
     {
@@ -90,6 +93,10 @@ public class PlayerCharacter : CharacterBase
                 {
                     Instantiate(heartPrefab, transform.position, Quaternion.identity);
                 }
+
+                punchSprite.enabled = true;
+
+                StartCoroutine(HidePunchSprite());
             }
         }
     }
@@ -130,5 +137,13 @@ public class PlayerCharacter : CharacterBase
     internal void NotifyInventoryItemUsed(InventoryItemDefinition inventoryItemDefinition)
     {
         life.RecoverHealth(inventoryItemDefinition.healthRecovery);
+    }
+
+    private IEnumerator HidePunchSprite()
+    {
+        yield return new WaitForSeconds(.25f); // update interval
+
+        punchSprite.enabled = false;
+
     }
 }
