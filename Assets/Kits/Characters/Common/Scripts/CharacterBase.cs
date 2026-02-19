@@ -48,9 +48,4 @@ public class CharacterBase : MonoBehaviour, IVisible2D
     {
         return side;    
     }
-
-    protected Vector2 GetLastMoveDirection()
-    {
-        return lastMoveDirection;
-    }
 }

@@ -49,8 +49,6 @@ public class PlayerCharacter : CharacterBase
         {
             mustPunch = false;
             PerformPunch();
-
-            Debug.Log(GetLastMoveDirection());
         }
     }
 
