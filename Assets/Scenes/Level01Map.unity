@@ -127785,8 +127785,8 @@ MonoBehaviour:
   punch: {fileID: 1120369429361536294, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   heartPrefab: {fileID: 7424355381935017495, guid: 4bfacb75d2fc84641bc3069915acad6c,
     type: 3}
-  punchRadius: 0.001
-  punchRange: 0.001
+  punchRadius: 0.0005
+  punchRange: 0.0005
   punchSound: {fileID: 8300000, guid: 75014cd5cb7b3434685b3715d4c16316, type: 3}
   punchSound2: {fileID: 8300000, guid: 4d857ca7b59d62e4e8567fb13853b576, type: 3}
   punchSprite: {fileID: 7016131646132795841}
